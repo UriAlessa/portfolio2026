@@ -4,7 +4,7 @@ export const personalInfo = {
   nombre: "Uriel Alessandro",
   titulo: "Desarrollador Web Full Stack",
   sobreMi:
-    "Apasionado por crear soluciones tecnológicas eficientes. Actualmente desarrollando un sistema de turneros y expandiendo mis habilidades en el ecosistema JavaScript.",
+    "Apasionado por crear soluciones tecnológicas eficientes. Actualmente expandiendo mis habilidades en el ecosistema JavaScript y web development, en busca de nuevas oportunidades laborales.",
   email: "urialessandro2@ejemplo.com",
   github: "https://github.com/urialessa",
   linkedin: "https://ar.linkedin.com/in/uriel-alessandro-8618b421a",
@@ -60,7 +60,7 @@ export const proyectos = [
     descripcion:
       "Aplicación web para la gestión de turnos en tiempo real. Incluye panel de administración y vista para clientes.",
     tecnologias: ["React", "Node.js", "PostgreSQL"],
-    github: "https://github.com/tu-usuario/turnero",
+    github: "https://github.com/UriAlessa/turnero",
     demo: "https://turnero-demo.vercel.app",
   },
   {
@@ -68,7 +68,7 @@ export const proyectos = [
     descripcion:
       "Sitio web one-page desarrollado con Astro, React y Tailwind CSS, optimizado para SEO y rendimiento.",
     tecnologias: ["Astro", "React", "Tailwind", "shadcn/ui"],
-    github: "https://github.com/tu-usuario/portafolio",
+    github: "https://github.com/UriAlessa/portfolio2026",
     demo: "#",
   },
 ];
