@@ -111,3 +111,17 @@ export const seo = {
   url: "https://tu-portafolio.vercel.app",
   image: "/avatar.svg",
 };
+
+export const certificaciones = [
+  {
+    titulo: "Desarrollador Web Full Stack MERN & Mobile Apps",
+    emisor: "MindHub",
+    fecha: "2021", //
+    credencialUrl:
+      "https://www.credly.com/badges/238fe9d3-219c-4a56-be79-759f7366bc55/linked_in",
+    imagenUrl:
+      "https://images.credly.com/size/680x680/images/9ab2bbf5-a5cd-4c36-9c5a-1ce7e0e0cd32/Insignia_MERN-20.png",
+    descripcion:
+      "Desarrollo de aplicaciones web responsivas y móviles (React Native) utilizando el stack MERN (MongoDB, Express, React, Node.js). Enfoque en la entrega de soluciones escalables, trabajo en equipo y aplicación de metodologías ágiles.",
+  },
+];

@@ -11,6 +11,8 @@ import { SocialLinks } from '../components/SocialLinks';
 import { MobileMenu } from '../components/MobileMenu';
 import { TypeWriter } from '../components/TypeWriter';
 import { TechBadge } from '../components/TechBadge';
+import { certificaciones } from '../data/portfolio';
+import { CertificationCard } from '../components/CertificationCard';
 ---
 
 <html lang="es">
@@ -116,7 +118,7 @@ import { TechBadge } from '../components/TechBadge';
               <a href="#proyectos" class="inline-flex items-center justify-center h-9 px-4 py-2 rounded-md bg-primary text-primary-foreground shadow hover:bg-primary/90 text-sm font-medium transition-all">
                 Ver Proyectos
               </a>
-              <a href={`mailto:${personalInfo.email}`} class="inline-flex items-center justify-center h-9 px-4 py-2 rounded-md border border-input bg-background shadow-sm hover:bg-accent hover:text-accent-foreground text-sm font-medium transition-all">
+              <a href="#contacto" class="inline-flex items-center justify-center h-9 px-4 py-2 rounded-md border border-input bg-background shadow-sm hover:bg-accent hover:text-accent-foreground text-sm font-medium transition-all">
                 Contactar
               </a>
             </div>
@@ -206,6 +208,24 @@ import { TechBadge } from '../components/TechBadge';
                   <p class="text-muted-foreground">{edu.institucion}</p>
                   <p class="mt-2 text-sm">{edu.descripcion}</p>
                 </div>
+              </AnimateOnScroll>
+            ))}
+          </div>
+        </div>
+      </AnimateOnScroll>
+    </section>
+
+    <Separator />
+
+    <!-- Sección: Certificaciones -->
+    <section id="certificaciones" class="py-12">
+      <AnimateOnScroll client:visible animation="fade-up" delay={350}>
+        <div class="space-y-6">
+          <h2 class="text-3xl font-bold">Certificaciones</h2>
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+            {certificaciones.map((cert, index) => (
+              <AnimateOnScroll client:visible animation="scale" delay={index * 100}>
+                <CertificationCard cert={cert} />
               </AnimateOnScroll>
             ))}
           </div>

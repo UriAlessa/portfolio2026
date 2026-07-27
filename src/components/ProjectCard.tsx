@@ -9,7 +9,7 @@ import {
 } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { buttonVariants } from "@/components/ui/button";
-import { ExternalLink } from "lucide-react";
+import { ExternalLink, Code2 } from "lucide-react";
 
 interface Project {
   titulo: string;
@@ -17,33 +17,79 @@ interface Project {
   tecnologias: string[];
   github: string;
   demo: string;
+  imagen?: string;
 }
 
 export function ProjectCard({ project }: { project: Project }) {
+  // Limitamos a 4 tecnologías para que la tarjeta no se vea saturada
+  const techsToShow = project.tecnologias.slice(0, 4);
+  const remainingTechs = project.tecnologias.length - 4;
+
   return (
-    <Card className="flex flex-col h-full transition-all hover:shadow-lg hover:-translate-y-1">
-      <CardHeader>
-        <CardTitle>{project.titulo}</CardTitle>
-        <CardDescription>{project.descripcion}</CardDescription>
+    <Card className="group relative flex flex-col h-full overflow-hidden border-border/50 bg-card transition-all duration-300 hover:-translate-y-1 hover:shadow-xl hover:shadow-primary/10 hover:border-primary/30">
+      {/* Área de Imagen (con fallback elegante si no hay imagen) */}
+      <div className="aspect-video w-full overflow-hidden bg-muted/50 relative">
+        {project.imagen ? (
+          <img
+            src={project.imagen}
+            alt={project.titulo}
+            className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
+          />
+        ) : (
+          <div className="flex h-full w-full items-center justify-center bg-gradient-to-br from-primary/10 via-primary/5 to-background">
+            <Code2 className="h-12 w-12 text-primary/40 transition-transform duration-500 group-hover:scale-110 group-hover:text-primary/60" />
+          </div>
+        )}
+
+        {/* Overlay sutil al hacer hover */}
+        <div className="absolute inset-0 bg-black/0 transition-colors duration-300 group-hover:bg-black/5 dark:group-hover:bg-white/5" />
+      </div>
+
+      <CardHeader className="pb-3">
+        <CardTitle className="text-xl font-semibold tracking-tight transition-colors duration-300 group-hover:text-primary">
+          {project.titulo}
+        </CardTitle>
+        <CardDescription className="line-clamp-2 text-sm leading-relaxed">
+          {project.descripcion}
+        </CardDescription>
       </CardHeader>
-      <CardContent className="grow">
+
+      <CardContent className="grow pb-4">
         <div className="flex flex-wrap gap-2">
-          {project.tecnologias.map((tech) => (
-            <Badge key={tech} variant="secondary">
+          {techsToShow.map((tech) => (
+            <Badge
+              key={tech}
+              variant="secondary"
+              className="font-normal text-xs px-2.5 py-0.5"
+            >
               {tech}
             </Badge>
           ))}
+          {remainingTechs > 0 && (
+            <Badge
+              variant="outline"
+              className="font-normal text-xs px-2.5 py-0.5"
+            >
+              +{remainingTechs}
+            </Badge>
+          )}
         </div>
       </CardContent>
-      <CardFooter className="flex gap-2">
+
+      <CardFooter className="pt-2 flex gap-3">
         <a
           href={project.github}
           target="_blank"
           rel="noopener noreferrer"
-          className={buttonVariants({ variant: "outline", size: "sm" })}
+          className={buttonVariants({
+            variant: "outline",
+            size: "sm",
+            className: "flex-1 gap-2 transition-all hover:border-primary/50",
+          })}
         >
+          {/* SVG de GitHub inline para evitar problemas de importación */}
           <svg
-            className="mr-2 h-4 w-4"
+            className="h-4 w-4"
             fill="currentColor"
             viewBox="0 0 24 24"
             aria-hidden="true"
@@ -56,14 +102,19 @@ export function ProjectCard({ project }: { project: Project }) {
           </svg>
           Código
         </a>
+
         {project.demo !== "#" && (
           <a
             href={project.demo}
             target="_blank"
             rel="noopener noreferrer"
-            className={buttonVariants({ size: "sm" })}
+            className={buttonVariants({
+              size: "sm",
+              className: "flex-1 gap-2 transition-all",
+            })}
           >
-            <ExternalLink className="mr-2 h-4 w-4" /> Demo
+            <ExternalLink className="h-4 w-4" />
+            Demo
           </a>
         )}
       </CardFooter>
