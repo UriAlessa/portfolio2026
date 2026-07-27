@@ -10,6 +10,7 @@ import { ContactForm } from '../components/ContactForm';
 import { AvatarSection } from '../components/AvatarSection';
 import { SocialLinks } from '../components/SocialLinks';
 import { MobileMenu } from '../components/MobileMenu';
+import { TypeWriter } from '../components/TypeWriter';
 ---
 
 <html lang="es">
@@ -88,7 +89,6 @@ import { MobileMenu } from '../components/MobileMenu';
    <main class="container mx-auto px-4 max-w-4xl pt-24 pb-16 space-y-24">
     
     <!-- Sección: Sobre Mí -->
-        <!-- Sección: Sobre Mí -->
     <AnimateOnScroll client:visible animation="fade-up">
       <section id="sobre-mi" class="space-y-6">
         <div class="flex flex-col md:flex-row items-center md:items-start gap-8">
@@ -96,12 +96,19 @@ import { MobileMenu } from '../components/MobileMenu';
           <AvatarSection 
             client:load 
             nombre={personalInfo.nombre} 
-            imagenUrl="/avatar.svg"
+            imagenUrl="/avatar.svg" 
           />
           
           <!-- Info -->
           <div class="space-y-4 text-center md:text-left">
-            <h1 class="text-4xl md:text-5xl font-bold tracking-tight">{personalInfo.titulo}</h1>
+            <h1 class="text-4xl md:text-5xl font-bold tracking-tight">
+              <TypeWriter 
+                client:load 
+                text={personalInfo.titulo} 
+                speed={80}
+                delay={600}
+              />
+            </h1>
             <p class="text-xl text-muted-foreground max-w-2xl leading-relaxed">
               {personalInfo.sobreMi}
             </p>
@@ -113,7 +120,9 @@ import { MobileMenu } from '../components/MobileMenu';
                 Contactar
               </a>
             </div>
-			<SocialLinks 
+            
+            <!-- Iconos sociales -->
+            <SocialLinks 
               client:load
               github={personalInfo.github}
               linkedin={personalInfo.linkedin}
