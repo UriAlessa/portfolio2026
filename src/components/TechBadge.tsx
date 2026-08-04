@@ -33,17 +33,11 @@ function AstroIcon({ className }: { className?: string }) {
     <svg
       className={className}
       viewBox="0 0 128 128"
-      fill="none"
+      fill="currentColor"
       xmlns="http://www.w3.org/2000/svg"
     >
-      <path
-        d="M47.48 88.56c-2.72 2.24-4.4 5.6-4.4 9.36 0 6.64 5.36 12 12 12s12-5.36 12-12c0-3.76-1.68-7.12-4.4-9.36L64 86.72l1.32 1.84c2.72 2.24 4.4 5.6 4.4 9.36 0 6.64-5.36 12-12 12s-12-5.36-12-12c0-3.76 1.68-7.12 4.4-9.36L47.48 88.56z"
-        fill="currentColor"
-      />
-      <path
-        d="M64 16c-2.4 0-4.56 1.44-5.52 3.6L32.56 82.8c-.96 2.16-.48 4.72 1.2 6.4l.72.72c1.68 1.68 4.24 2.16 6.4 1.2L64 80.4l23.12 10.72c2.16.96 4.72.48 6.4-1.2l.72-.72c1.68-1.68 2.16-4.24 1.2-6.4L69.52 19.6C68.56 17.44 66.4 16 64 16z"
-        fill="currentColor"
-      />
+      <path d="M47.48 88.56c-2.72 2.24-4.4 5.6-4.4 9.36 0 6.64 5.36 12 12 12s12-5.36 12-12c0-3.76-1.68-7.12-4.4-9.36L64 86.72l1.32 1.84c2.72 2.24 4.4 5.6 4.4 9.36 0 6.64-5.36 12-12 12s-12-5.36-12-12c0-3.76 1.68-7.12 4.4-9.36L47.48 88.56z" />
+      <path d="M64 16c-2.4 0-4.56 1.44-5.52 3.6L32.56 82.8c-.96 2.16-.48 4.72 1.2 6.4l.72.72c1.68 1.68 4.24 2.16 6.4 1.2L64 80.4l23.12 10.72c2.16.96 4.72.48 6.4-1.2l.72-.72c1.68-1.68 2.16-4.24 1.2-6.4L69.52 19.6C68.56 17.44 66.4 16 64 16z" />
     </svg>
   );
 }
@@ -63,11 +57,11 @@ export function TechBadge({ tech, index }: TechBadgeProps) {
       }}
     >
       {isAstro ? (
-        <AstroIcon className="w-5 h-5 transition-transform duration-300 group-hover:scale-125 group-hover:rotate-6" />
+        <AstroIcon className="w-5 h-5 text-primary transition-transform duration-300 group-hover:scale-125 group-hover:rotate-6" />
       ) : (
         iconClass && (
           <i
-            className={`${iconClass} text-xl transition-transform duration-300 group-hover:scale-125 group-hover:rotate-6`}
+            className={`${iconClass} text-xl text-primary transition-transform duration-300 group-hover:scale-125 group-hover:rotate-6`}
           ></i>
         )
       )}

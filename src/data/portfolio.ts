@@ -36,7 +36,8 @@ export const educacion = [
     anio: "2021 - 2021",
     titulo: "Desarrollo Web Full Stack MERN",
     institucion: "Bootcamp MindHub",
-    descripcion: "A completar.",
+    descripcion:
+      "Formación intensiva en desarrollo web y móvil. Dominio del stack MERN (MongoDB, Express, React, Node.js) y React Native. Aplicación de metodologías ágiles, control de versiones con Git y mejores prácticas de desarrollo colaborativo.",
   },
   {
     anio: "2023 - 2025",
@@ -61,7 +62,8 @@ export const proyectos = [
       "Aplicación web para la gestión de turnos en tiempo real. Incluye panel de administración y vista para clientes.",
     tecnologias: ["React", "Node.js", "PostgreSQL"],
     github: "https://github.com/UriAlessa/turnero",
-    demo: "https://turnero-demo.vercel.app",
+    demo: "https://turnero-ochre.vercel.app",
+    imagen: "/projects/dashboard-turnero.png",
   },
   {
     titulo: "Portafolio Personal",
