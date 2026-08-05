@@ -1,4 +1,3 @@
-// src/components/TechBadge.tsx
 import { Badge } from "@/components/ui/badge";
 import "devicon/devicon.min.css";
 
@@ -27,7 +26,6 @@ const techIcons: Record<string, string> = {
   SQL: "devicon-postgresql-plain",
 };
 
-// SVG del logo de Astro
 function AstroIcon({ className }: { className?: string }) {
   return (
     <svg

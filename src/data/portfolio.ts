@@ -1,5 +1,3 @@
-// src/data/portfolio.ts
-
 export const personalInfo = {
   nombre: "Uriel Alessandro",
   titulo: "Desarrollador Web Full Stack",
@@ -75,7 +73,6 @@ export const proyectos = [
   },
 ];
 
-// Agregá esto al final del archivo, después de 'educacion' o 'proyectos'
 export const experiencia = [
   {
     periodo: "Enero 2022 - Octubre 2022",
@@ -111,7 +108,7 @@ export const seo = {
   description:
     "Portafolio de Uriel Alessandro, Desarrollador Full Stack especializado en React, Astro, Node.js y PostgreSQL. Actualmente desarrollando un sistema de turneros en tiempo real.",
   url: "https://tu-portafolio.vercel.app",
-  image: "/avatar.svg",
+  image: "/avatar-photo.jpeg",
 };
 
 export const certificaciones = [

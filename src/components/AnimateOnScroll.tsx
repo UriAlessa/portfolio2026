@@ -1,4 +1,3 @@
-// src/components/AnimateOnScroll.tsx
 import { useInView } from "@/hooks/useInView";
 
 interface AnimateOnScrollProps {

@@ -1,4 +1,3 @@
-// src/components/TypeWriter.tsx
 import { useState, useEffect } from 'react';
 
 interface TypeWriterProps {

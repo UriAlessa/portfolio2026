@@ -1,4 +1,3 @@
-// src/components/ThemeToggle.tsx
 import { useEffect, useState } from "react";
 import { buttonVariants } from "@/components/ui/button";
 import { cn } from "@/lib/utils";

@@ -1,4 +1,3 @@
-// src/components/AvatarSection.tsx
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 
 interface AvatarSectionProps {
@@ -7,7 +6,6 @@ interface AvatarSectionProps {
 }
 
 export function AvatarSection({ nombre, imagenUrl }: AvatarSectionProps) {
-  // Generar iniciales para el fallback
   const iniciales = nombre
     .split(" ")
     .map((n) => n[0])

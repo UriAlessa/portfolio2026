@@ -1,4 +1,3 @@
-// src/components/ProjectCard.tsx
 import {
   Card,
   CardContent,
@@ -21,13 +20,11 @@ interface Project {
 }
 
 export function ProjectCard({ project }: { project: Project }) {
-  // Limitamos a 4 tecnologías para que la tarjeta no se vea saturada
   const techsToShow = project.tecnologias.slice(0, 4);
   const remainingTechs = project.tecnologias.length - 4;
 
   return (
     <Card className="group relative flex flex-col h-full overflow-hidden border-border/50 bg-card transition-all duration-300 hover:-translate-y-1 hover:shadow-xl hover:shadow-primary/10 hover:border-primary/30">
-      {/* Área de Imagen (con fallback elegante si no hay imagen) */}
       <div className="aspect-video w-full overflow-hidden bg-muted/50 relative">
         {project.imagen ? (
           <img
@@ -41,7 +38,6 @@ export function ProjectCard({ project }: { project: Project }) {
           </div>
         )}
 
-        {/* Overlay sutil al hacer hover */}
         <div className="absolute inset-0 bg-black/0 transition-colors duration-300 group-hover:bg-black/5 dark:group-hover:bg-white/5" />
       </div>
 
@@ -87,7 +83,6 @@ export function ProjectCard({ project }: { project: Project }) {
             className: "flex-1 gap-2 transition-all hover:border-primary/50",
           })}
         >
-          {/* SVG de GitHub inline para evitar problemas de importación */}
           <svg
             className="h-4 w-4"
             fill="currentColor"

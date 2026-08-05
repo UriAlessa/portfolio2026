@@ -1,4 +1,3 @@
-// src/hooks/useInView.ts
 import { useEffect, useRef, useState } from "react";
 
 export function useInView(options = {}) {

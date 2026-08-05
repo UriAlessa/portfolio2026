@@ -1,4 +1,3 @@
-// src/components/MobileMenu.tsx
 import { useState, useEffect } from "react";
 import { cn } from "@/lib/utils";
 
@@ -9,7 +8,6 @@ interface MobileMenuProps {
 export function MobileMenu({ links }: MobileMenuProps) {
   const [isOpen, setIsOpen] = useState(false);
 
-  // Conectar con el botón hamburguesa del navbar
   useEffect(() => {
     const button = document.getElementById("mobile-menu-button");
     if (!button) return;
@@ -22,7 +20,6 @@ export function MobileMenu({ links }: MobileMenuProps) {
     };
   }, []);
 
-  // Actualizar ícono del botón según estado
   useEffect(() => {
     const button = document.getElementById("mobile-menu-button");
     if (!button) return;
@@ -39,7 +36,6 @@ export function MobileMenu({ links }: MobileMenuProps) {
     }
   }, [isOpen]);
 
-  // Cerrar con Escape y bloquear scroll
   useEffect(() => {
     const handleEscape = (e: KeyboardEvent) => {
       if (e.key === "Escape") setIsOpen(false);
@@ -62,7 +58,6 @@ export function MobileMenu({ links }: MobileMenuProps) {
 
   return (
     <>
-      {/* Overlay oscuro - z-[60] (mayor que el navbar z-50) */}
       <div
         className={cn(
           "fixed inset-0 bg-black/50 backdrop-blur-sm transition-opacity duration-300 md:hidden",
@@ -73,7 +68,6 @@ export function MobileMenu({ links }: MobileMenuProps) {
         onClick={() => setIsOpen(false)}
       />
 
-      {/* Drawer del menú - z-[70] (mayor que el overlay) */}
       <div
         className={cn(
           "fixed top-0 right-0 h-full w-64 bg-background border-l shadow-xl transform transition-transform duration-300 ease-in-out md:hidden",
@@ -81,7 +75,6 @@ export function MobileMenu({ links }: MobileMenuProps) {
         )}
       >
         <div className="flex flex-col h-full">
-          {/* Header del drawer */}
           <div className="flex items-center justify-between p-4 border-b">
             <span className="font-bold text-lg">Menú</span>
             <button
@@ -105,7 +98,6 @@ export function MobileMenu({ links }: MobileMenuProps) {
             </button>
           </div>
 
-          {/* Links de navegación */}
           <nav className="flex-1 overflow-y-auto p-4">
             <ul className="space-y-2">
               {links.map((link) => (

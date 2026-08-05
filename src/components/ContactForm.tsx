@@ -1,6 +1,3 @@
-// f8572db3-0ffd-4c0a-bef3-0689d00fb4e0
-
-// src/components/ContactForm.tsx
 import { useState } from "react";
 import {
   Card,
@@ -48,7 +45,7 @@ export function ContactForm() {
       if (result.success) {
         setStatus("success");
         setFormData({ name: "", email: "", message: "" });
-        setTimeout(() => setStatus("idle"), 5000); // Reset después de 5 segundos
+        setTimeout(() => setStatus("idle"), 5000);
       } else {
         setStatus("error");
         setTimeout(() => setStatus("idle"), 5000);

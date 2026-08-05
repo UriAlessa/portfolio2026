@@ -1,6 +1,6 @@
 ---
 import '../styles/global.css'; 
-import { personalInfo, habilidades, educacion, proyectos, experiencia, seo } from '../data/portfolio';
+import { personalInfo, habilidades, educacion, proyectos, experiencia, seo, certificaciones } from '../data/portfolio';
 import { AnimateOnScroll } from '../components/AnimateOnScroll';
 import { ProjectCard } from '../components/ProjectCard';
 import { Separator } from "@/components/ui/separator";
@@ -11,7 +11,6 @@ import { SocialLinks } from '../components/SocialLinks';
 import { MobileMenu } from '../components/MobileMenu';
 import { TypeWriter } from '../components/TypeWriter';
 import { TechBadge } from '../components/TechBadge';
-import { certificaciones } from '../data/portfolio';
 import { CertificationCard } from '../components/CertificationCard';
 ---
 
@@ -20,13 +19,11 @@ import { CertificationCard } from '../components/CertificationCard';
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   
-  <!-- SEO Básico -->
   <title>{seo.title}</title>
   <meta name="description" content={seo.description} />
   <meta name="author" content={personalInfo.nombre} />
   <link rel="canonical" href={seo.url} />
 
-  <!-- Open Graph (Facebook, LinkedIn, WhatsApp, Discord) -->
   <meta property="og:type" content="website" />
   <meta property="og:url" content={seo.url} />
   <meta property="og:title" content={seo.title} />
@@ -34,7 +31,6 @@ import { CertificationCard } from '../components/CertificationCard';
   <meta property="og:image" content={`${seo.url}${seo.image}`} />
   <meta property="og:locale" content="es_AR" />
 
-  <!-- Twitter Card -->
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:url" content={seo.url} />
   <meta name="twitter:title" content={seo.title} />
@@ -45,12 +41,10 @@ import { CertificationCard } from '../components/CertificationCard';
 </head>
 <body class="bg-background text-foreground antialiased">
   
-  <!-- Navegación -->
   <nav class="fixed top-0 w-full bg-background/80 backdrop-blur-md z-50 border-b">
     <div class="container mx-auto px-4 py-4 flex justify-between items-center max-w-4xl">
       <span class="font-bold text-xl">{personalInfo.nombre}</span>
       <div class="flex items-center gap-4">
-        <!-- Links de desktop -->
         <div class="hidden md:flex gap-6 text-sm font-medium">
           <a href="#sobre-mi" class="hover:text-primary transition-colors">Sobre mí</a>
           <a href="#experiencia" class="hover:text-primary transition-colors">Experiencia</a>
@@ -59,10 +53,8 @@ import { CertificationCard } from '../components/CertificationCard';
           <a href="#contacto" class="hover:text-primary transition-colors">Contacto</a>
         </div>
         
-        <!-- Botón de tema -->
         <ThemeToggle client:load />
-        
-        <!-- Botón hamburguesa -->
+
         <button
           id="mobile-menu-button"
           class="md:hidden inline-flex items-center justify-center h-10 w-10 rounded-md border border-input bg-background hover:bg-accent hover:text-accent-foreground transition-all"
@@ -76,7 +68,6 @@ import { CertificationCard } from '../components/CertificationCard';
     </div>
   </nav>
 
-  <!-- Menú móvil -->
   <MobileMenu 
     client:load
     links={[
@@ -90,18 +81,15 @@ import { CertificationCard } from '../components/CertificationCard';
 
   <main class="container mx-auto px-4 max-w-4xl pt-24 pb-16">
     
-    <!-- Sección: Sobre Mí -->
     <section id="sobre-mi" class="py-12">
       <AnimateOnScroll client:visible animation="fade-up">
         <div class="flex flex-col md:flex-row items-center md:items-start gap-8">
-          <!-- Avatar -->
           <AvatarSection 
             client:load 
             nombre={personalInfo.nombre} 
-            imagenUrl="/avatar.svg" 
+            imagenUrl="/avatar-photo.jpeg"
           />
           
-          <!-- Info -->
           <div class="space-y-4 text-center md:text-left">
             <h1 class="text-4xl md:text-5xl font-bold tracking-tight">
               <TypeWriter 
@@ -123,7 +111,6 @@ import { CertificationCard } from '../components/CertificationCard';
               </a>
             </div>
             
-            <!-- Iconos sociales -->
             <SocialLinks 
               client:load
               github={personalInfo.github}
@@ -139,7 +126,6 @@ import { CertificationCard } from '../components/CertificationCard';
 
     <Separator />
 
-    <!-- Sección: Habilidades -->
     <section id="habilidades" class="py-12">
       <AnimateOnScroll client:visible animation="fade-up" delay={100}>
         <div class="space-y-6">
@@ -159,7 +145,6 @@ import { CertificationCard } from '../components/CertificationCard';
 
     <Separator />
 
-    <!-- Sección: Experiencia Laboral -->
     <section id="experiencia" class="py-12">
       <AnimateOnScroll client:visible animation="fade-up" delay={200}>
         <div class="space-y-6">
@@ -193,7 +178,6 @@ import { CertificationCard } from '../components/CertificationCard';
 
     <Separator />
 
-    <!-- Sección: Educación -->
     <section id="educacion" class="py-12">
       <AnimateOnScroll client:visible animation="fade-up" delay={300}>
         <div class="space-y-6">
@@ -217,7 +201,6 @@ import { CertificationCard } from '../components/CertificationCard';
 
     <Separator />
 
-    <!-- Sección: Certificaciones -->
     <section id="certificaciones" class="py-12">
       <AnimateOnScroll client:visible animation="fade-up" delay={350}>
         <div class="space-y-6">
@@ -235,7 +218,6 @@ import { CertificationCard } from '../components/CertificationCard';
 
     <Separator />
 
-    <!-- Sección: Proyectos -->
     <section id="proyectos" class="py-12">
       <AnimateOnScroll client:visible animation="fade-up" delay={400}>
         <div class="space-y-6">
@@ -253,7 +235,6 @@ import { CertificationCard } from '../components/CertificationCard';
 
     <Separator />
     
-    <!-- Sección: Contacto -->
     <section id="contacto" class="py-12">
       <AnimateOnScroll client:visible animation="fade-up">
         <div class="space-y-6">
