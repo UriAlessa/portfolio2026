@@ -3,7 +3,7 @@ export const personalInfo = {
   titulo: "Desarrollador Web Full Stack",
   sobreMi:
     "Apasionado por crear soluciones tecnológicas eficientes. Actualmente expandiendo mis habilidades en el ecosistema JavaScript y web development, en busca de nuevas oportunidades laborales.",
-  email: "urialessandro2@ejemplo.com",
+  email: "urialessandro2@gmail.com",
   github: "https://github.com/urialessa",
   linkedin: "https://ar.linkedin.com/in/uriel-alessandro-8618b421a",
 };
@@ -107,7 +107,7 @@ export const seo = {
   title: "Uriel Alessandro | Desarrollador Full Stack",
   description:
     "Portafolio de Uriel Alessandro, Desarrollador Full Stack especializado en React, Astro, Node.js y PostgreSQL. Actualmente desarrollando un sistema de turneros en tiempo real.",
-  url: "https://tu-portafolio.vercel.app",
+  url: "https://urielalessandro.vercel.app",
   image: "/avatar-photo.jpeg",
 };
 
