@@ -8,6 +8,7 @@ import {
 } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { buttonVariants } from "@/components/ui/button";
+import { splitLinkedDescription } from "@/lib/project-description";
 import { ExternalLink, Code2 } from "lucide-react";
 
 interface Project {
@@ -17,11 +18,18 @@ interface Project {
   github: string;
   demo: string;
   imagen?: string;
+  descripcionLink?: {
+    texto: string;
+    href: string;
+  };
 }
 
 export function ProjectCard({ project }: { project: Project }) {
   const techsToShow = project.tecnologias.slice(0, 4);
   const remainingTechs = project.tecnologias.length - 4;
+  const descriptionParts = project.descripcionLink
+    ? splitLinkedDescription(project.descripcion, project.descripcionLink.texto)
+    : null;
 
   return (
     <Card className="group relative flex flex-col h-full overflow-hidden border-border/50 bg-card transition-all duration-300 hover:-translate-y-1 hover:shadow-xl hover:shadow-primary/10 hover:border-primary/30">
@@ -45,8 +53,23 @@ export function ProjectCard({ project }: { project: Project }) {
         <CardTitle className="text-xl font-semibold tracking-tight transition-colors duration-300 group-hover:text-primary">
           {project.titulo}
         </CardTitle>
-        <CardDescription className="line-clamp-2 text-sm leading-relaxed">
-          {project.descripcion}
+        <CardDescription className="text-sm leading-relaxed">
+          {descriptionParts && project.descripcionLink ? (
+            <>
+              {descriptionParts.before}
+              <a
+                href={project.descripcionLink.href}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="font-medium text-foreground underline underline-offset-2 transition-colors hover:text-primary"
+              >
+                {descriptionParts.linkText}
+              </a>
+              {descriptionParts.after}
+            </>
+          ) : (
+            project.descripcion
+          )}
         </CardDescription>
       </CardHeader>
 

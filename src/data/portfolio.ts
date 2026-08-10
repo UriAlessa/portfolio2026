@@ -70,6 +70,20 @@ export const proyectos = [
     tecnologias: ["Astro", "React", "Tailwind", "shadcn/ui"],
     github: "https://github.com/UriAlessa/portfolio2026",
     demo: "#",
+    imagen: "/projects/portfolio-personal-v2.png",
+  },
+  {
+    titulo: "Dashboard de Gestión — Bastardos",
+    descripcion:
+      "Proyecto en desarrollo para Bastardos Barbería, que contactó a Sierras Techlab para crear un sistema de gestión a medida. Centraliza ingresos, clientes, servicios, inventario y usuarios con roles de acceso.",
+    descripcionLink: {
+      texto: "Bastardos Barbería",
+      href: "https://bastardos.com.ar",
+    },
+    tecnologias: ["Next.js", "TypeScript", "Supabase", "Tailwind CSS"],
+    github: "https://github.com/Sierras-Techlab/bastardos-barberia",
+    demo: "#",
+    imagen: "/projects/dashboard-bastardos.png",
   },
 ];
 
@@ -99,6 +113,19 @@ export const experiencia = [
       "Puntualidad y compromiso con los horarios y turnos establecidos.",
       "Capacidad de adaptación a situaciones cambiantes y de alta presión.",
       "Desarrollo de habilidades de comunicación efectiva y resolución de conflictos.",
+    ],
+  },
+  {
+    periodo: "2026 - Presente",
+    cargo: "Cofundador y desarrollador de software",
+    empresa: "Sierras Techlab",
+    descripcion:
+      "Cofundador de una startup de desarrollo de software orientada a convertir necesidades de negocio en soluciones digitales a medida, participando desde el relevamiento y la arquitectura hasta la implementación y entrega.",
+    logros: [
+      "Relevamiento de procesos y necesidades con clientes para definir soluciones alineadas con sus objetivos de negocio.",
+      "Diseño de arquitectura, modelado de datos y selección del stack técnico según el alcance, los costos y la evolución de cada proyecto.",
+      "Toma de decisiones técnicas y de producto con autonomía, priorizando mantenibilidad, experiencia de usuario y valor entregado.",
+      "Desarrollo integral y coordinación de proyectos para clientes reales, desde la idea inicial hasta su puesta en producción.",
     ],
   },
 ];
